@@ -1,0 +1,100 @@
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-primary-light: #e0e7ff;
+  --color-primary-text: #3730a3;
+
+  --color-text-base: #1f2937;
+  --color-text-muted: #4b5563;
+  --color-text-heading: #111827;
+  --color-text-inverted: #ffffff;
+
+  --color-bg-base: #f9fafb;
+  --color-bg-card: #ffffff;
+  --color-bg-card-selected: #f0f5ff;
+  --color-bg-disabled: #d1d5db;
+
+  --border-color: #e5e7eb;
+  --border-color-focus: var(--color-primary);
+}
+
+
+
+.btn {
+  @apply py-3 px-6 rounded-lg font-semibold transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply shadow-lg;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverted);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+.btn-primary:disabled {
+  @apply cursor-not-allowed shadow-none;
+  background-color: var(--color-bg-disabled);
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-700;
+}
+.btn-secondary:hover {
+  @apply bg-gray-300;
+}
+
+.skip-card {
+  @apply cursor-pointer rounded-2xl p-6 shadow-lg transition-all duration-300 ease-in-out border-2;
+  background-color: var(--color-bg-card);
+  border-color: var(--border-color);
+}
+
+.skip-card:hover {
+  @apply shadow-xl;
+  border-color: var(--color-primary);
+}
+
+.skip-card--selected {
+  @apply ring-4;
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-card-selected);
+  --tw-ring-color: var(--color-primary);
+  --tw-ring-opacity: 0.2;
+}
+
+.stepper-item-icon {
+  @apply relative flex h-8 w-8 items-center justify-center rounded-full;
+}
+
+.stepper-item-icon--complete {
+  background-color: var(--color-primary);
+}
+
+.stepper-item-icon--current {
+  @apply border-2;
+  border-color: var(--color-primary);
+  background-color: var(--color-bg-card);
+}
+
+.stepper-item-icon--upcoming {
+  @apply border-2;
+  background-color: var(--color-bg-card);
+  border-color: var(--border-color);
+}
+
+.stepper-item-icon--upcoming:hover {
+  @apply border-gray-400;
+}
+
+.footer-bar {
+  @apply sticky bottom-0 mt-12 pb-4;
+}
+
+.footer-bar-content {
+  @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl max-w-4xl mx-auto p-4 sm:p-6 border;
+  border-color: var(--border-color);
+}
